@@ -11,6 +11,7 @@ const App = (props) => {
         setCurrentSlide(currentSlide - 1);
     };
     const nextSlideShow = () => {
+        document.querySelector("[data-testid='button-restart']").disabled = false;
         if (currentSlide === slides.length - 1) return;
         setCurrentSlide(currentSlide + 1);
     };
@@ -34,10 +35,10 @@ const App = (props) => {
     return (
         <div className="App">
             <div id="navigation">
-                <button onClick={prevSlideShow} data-testid="button-prev">
+                <button onClick={prevSlideShow} data-testid="button-prev" disabled>
                     {"Prev"}
                 </button>
-                <button onClick={restartSlideShow} data-testid="button-restart">
+                <button onClick={restartSlideShow} data-testid="button-restart" disabled>
                     {"Restart"}
                 </button>
                 <button onClick={nextSlideShow} data-testid="button-next">
