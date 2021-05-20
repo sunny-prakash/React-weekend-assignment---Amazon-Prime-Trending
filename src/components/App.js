@@ -22,6 +22,7 @@ const App = (props) => {
     useEffect(() => {
         if (currentSlide === 0) {
             document.querySelector("[data-testid='button-prev']").disabled = true;
+            document.querySelector("[data-testid='button-restart']").disabled = true;
         } else {
             document.querySelector("[data-testid='button-prev']").disabled = false;
         }
@@ -35,10 +36,10 @@ const App = (props) => {
     return (
         <div className="App">
             <div id="navigation">
-                <button onClick={prevSlideShow} data-testid="button-prev" disabled>
+                <button onClick={prevSlideShow} data-testid="button-prev">
                     {"Prev"}
                 </button>
-                <button onClick={restartSlideShow} data-testid="button-restart" disabled>
+                <button onClick={restartSlideShow} data-testid="button-restart">
                     {"Restart"}
                 </button>
                 <button onClick={nextSlideShow} data-testid="button-next">
